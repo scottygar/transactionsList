@@ -1,4 +1,4 @@
-My Project
+transactionsList
 ---
 
 Welcome.
@@ -16,3 +16,8 @@ Compile
 
 npm run compile
 
+
+Run Server
+---
+
+npm start
