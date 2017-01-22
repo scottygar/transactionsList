@@ -13,7 +13,7 @@ class transactionList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://588487486d8e0d1200b7064a.mockapi.io/api/todolist/v1/tasks')
+    fetch('http://588487486d8e0d1200b7064a.mockapi.io/api/transactions/v1/tasks')
       .then((response) => response.json())
       .then((responseJSON) => {
         this.setState({
