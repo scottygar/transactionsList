@@ -27,9 +27,10 @@ class transactionList extends React.Component {
       return (
         <div key={i}>
           <div className='transactionId' key={transaction.id} id={transaction.id}>
-            <p className='retailer'>{transaction.merchant}</p>
             <p className='transactionDate'>{transaction.created}</p>
             <p className='description'>{transaction.description}</p>
+            <p className='amount'>{'£' + (transaction.amount/-100).toFixed(2)}</p>
+            <br />
           </div>
         </div>
       );
