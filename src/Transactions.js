@@ -27,8 +27,9 @@ class transactionList extends React.Component {
       return (
         <div key={i}>
           <div className='transactionId' key={transaction.id} id={transaction.id}>
-            <p className='retailer'>{transaction.name}</p>
-            <p className='transactionDate'>{transaction.createdAt}</p>
+            <p className='retailer'>{transaction.merchant}</p>
+            <p className='transactionDate'>{transaction.created}</p>
+            <p className='description'>{transaction.description}</p>
           </div>
         </div>
       );
