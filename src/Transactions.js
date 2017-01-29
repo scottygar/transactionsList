@@ -1,8 +1,38 @@
 import React from 'react';
 
-/**
- * A counter button: tap the button to increase the count.
+/*
+ * A class to create a list of transactions from Monzo.
  */
+
+
+const styles = {
+  listDiv:{
+    margin: 'auto',
+    width: '55%',
+  },
+  
+  containerDiv: {
+    border: 'solid',
+    borderRadius: '15px 50px',
+    padding: '10px',
+    margin: '45px',
+    boxShadow: '10px 10px 5px #888888'
+  },
+  
+  amountDiv:{
+    'float': 'left',
+    padding: '2px',
+    position: 'relative',
+    top: '50%',
+    transform: 'translateY(-50%)',
+  },
+  
+  textDiv:{
+    padding: '2px',
+  }
+}
+
+
 
 class transactionList extends React.Component {
   constructor() {
@@ -25,12 +55,15 @@ class transactionList extends React.Component {
   render() {
     var transList = this.state.transactions.map(function(transaction, i) {
       return (
-        <div key={i}>
-          <div className='transactionId' key={transaction.id} id={transaction.id}>
-            <p className='transactionDate'>{transaction.created}</p>
-            <p className='description'>{transaction.description}</p>
-            <p className='amount'>{'£' + (transaction.amount/-100).toFixed(2)}</p>
-            <br />
+        <div style={styles.listDiv} className='transactionId' key={i} id={transaction.id}>
+          <div style={styles.containerDiv}>
+            <div style={styles.amountDiv}>
+              <p className='amount'>{'£' + (transaction.amount/100).toFixed(2)}</p>
+            </div>
+            <div style={styles.textDiv}>
+              <p className='transactionDate'>{new Date(transaction.created).toLocaleDateString()}</p>
+              <p className='description'>{transaction.description}</p>
+            </div>
           </div>
         </div>
       );
